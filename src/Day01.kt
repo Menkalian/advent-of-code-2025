@@ -1,37 +1,16 @@
-import kotlin.math.absoluteValue
-
 fun main() {
     fun part1(input: List<String>): Long {
-        val pairList = input.map { it.split("\\s+".toRegex()) }
-            .map { it[0].toLong() to it[1].toLong() }
-            .toList()
-        val firstList = pairList.map { it.first }
-            .sorted()
-        val secondList = pairList.map { it.second }
-            .sorted()
-
-        return firstList.zip(secondList)
-            .map { (it.first - it.second).absoluteValue }
-            .sum()
+        return 0L
     }
 
     fun part2(input: List<String>): Long {
-        val pairList = input.map { it.split("\\s+".toRegex()) }
-            .map { it[0].toLong() to it[1].toLong() }
-            .toList()
-        val secondList = pairList.map { it.second }
-            .groupBy { it }
-            .mapValues { it.value.size }
-
-        return pairList.map { it.first }
-            .map { it * (secondList[it] ?: 0) }
-            .sum()
+        return 0L
     }
 
     val testInput = readInput("Day01_test")
     if (testInput.isNotEmpty()) {
-        check(part1(testInput), 11L)
-        check(part2(testInput), 31L)
+        check(part1(testInput), 0L)
+        check(part2(testInput), 0L)
     }
 
     val input = readInput("Day01")
